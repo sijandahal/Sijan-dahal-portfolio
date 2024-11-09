@@ -3,12 +3,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import PropTypes from 'prop-types';
-// import Heading from '@/components/Heading'; // Assuming Heading is a custom component
-import Bounded from '@/components/Bounded'; // Assuming Bounded is a custom component
 import { Content } from '@prismicio/client';
-import { BsCodeSlash } from "react-icons/bs";
-
-
 // Register GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,31 +45,30 @@ const TechListSlice = ({ slice }: { slice: Content.TechListSlice }) => {
       className="overflow-hidden"
       ref={componentRef}
     >
-
       {slice.primary.item.map(({ tech_color, tech_name }, index) => (
         <div
           key={index}
           className="tech-row mb-8 flex items-center justify-center gap-4 text-slate-700"
           aria-label={tech_name || undefined}
         >
-       {Array.from({ length: 15 }).map((_, index) => {
-  const techStackArray = tech_name.split(","); 
-  return (
-    <>
-      {techStackArray.map((tech, idx) => (
-        <span
-          key={`${index}-${idx}`} 
-          className="tech-item text-8xl font-extrabold uppercase tracking-tighter"
-          style={{ color: index === 7 && tech_color ? tech_color : "inherit" }}
-        >
-          {tech.trim()} 
-        </span>
-      ))}
-      {index !== 14 && <span className="mx-2"> </span>}
-    </>
-  );
-})}
-
+          {Array.from({ length: 15 }).map((_, index) => {
+            // Ensure tech_name is valid (not null or undefined)
+            const techStackArray = tech_name ? tech_name.split(",") : []; 
+            return (
+              <>
+                {techStackArray.map((tech, idx) => (
+                  <span
+                    key={`${index}-${idx}`} 
+                    className="tech-item text-8xl font-extrabold uppercase tracking-tighter"
+                    style={{ color: index === 7 && tech_color ? tech_color : "inherit" }}
+                  >
+                    {tech.trim()} 
+                  </span>
+                ))}
+                {index !== 14 && <span className="mx-2"> </span>}
+              </>
+            );
+          })}
         </div>
       ))}
     </section>
@@ -90,7 +84,7 @@ TechListSlice.propTypes = {
       item: PropTypes.arrayOf(
         PropTypes.shape({
           tech_color: PropTypes.string.isRequired, // Assuming tech_color is a string
-          tech_name: PropTypes.string.isRequired,
+          tech_name: PropTypes.string, // tech_name is now optional, it can be null or string
         })
       ).isRequired,
     }).isRequired,

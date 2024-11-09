@@ -16,39 +16,36 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
   const skillsRef = useRef<HTMLDivElement[]>([]); // Ref array to hold all divs
 
   useEffect(() => {
-    // Set up Intersection Observer to detect when each skill section comes into view
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
+        const target = entry.target as HTMLDivElement;
+        const index = skillsRef.current.indexOf(target);
+  
         if (entry.isIntersecting) {
-          // Get the index of the current skill div
-          const index = skillsRef.current.indexOf(entry.target);
-
-          // If the 1st or 3rd div (index 0 and 2), animate from the left
           if (index === 0 || index === 2) {
             gsap.fromTo(
-              entry.target,
-              { opacity: 0, x: -100 }, // Starting state (invisible, offset to the left)
+              target,
+              { opacity: 0, x: -100 }, 
               { opacity: 1, x: 0, duration: 1, ease: "power3.out", delay: index * 0.2 } // Add delay based on index
             );
           }
-
-          // If the 2nd or 4th div (index 1 and 3), animate from the right
+  
           if (index === 1 || index === 3) {
             gsap.fromTo(
-              entry.target,
-              { opacity: 0, x: 100 }, // Starting state (invisible, offset to the right)
+              target,
+              { opacity: 0, x: 100 },
               { opacity: 1, x: 0, duration: 1, ease: "power3.out", delay: index * 0.2 } // Add delay based on index
             );
           }
         }
       });
-    }, { threshold: 0.5 }); // Trigger when 50% of the element is in view
-
+    }, { threshold: 0.5 }); 
+  
     // Attach the observer to each skill div
     skillsRef.current.forEach((div) => observer.observe(div));
-
+  
     return () => {
-      observer.disconnect(); // Clean up the observer when the component unmounts
+      observer.disconnect(); // Clean up the observer
     };
   }, []);
 
@@ -63,7 +60,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
       {/* Programming Wrapper */}
       <div className="flex gap-7">
         <div
-          ref={(el) => el && skillsRef.current.push(el)} // Push div reference to array
+          ref={(el) => { if (el) skillsRef.current.push(el); }} // Correct ref callback
           className="flex gap-5 mt-16 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">Programming Language</h2>
@@ -78,7 +75,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
         </div>
 
         <div
-          ref={(el) => el && skillsRef.current.push(el)} // Push div reference to array
+          ref={(el) => { if (el) skillsRef.current.push(el); }} // Correct ref callback
           className="flex gap-5 mt-16 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">FrontEnd Technologies</h2>
@@ -95,7 +92,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
 
       <div className="flex gap-7">
         <div
-          ref={(el) => el && skillsRef.current.push(el)} // Push div reference to array
+          ref={(el) => { if (el) skillsRef.current.push(el); }} // Correct ref callback
           className="flex gap-5 mt-16 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">BackEnd</h2>
@@ -110,7 +107,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
         </div>
 
         <div
-          ref={(el) => el && skillsRef.current.push(el)} // Push div reference to array
+          ref={(el) => { if (el) skillsRef.current.push(el); }} // Correct ref callback
           className="flex gap-5 mt-16 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">Database</h2>

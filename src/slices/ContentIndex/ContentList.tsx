@@ -137,7 +137,7 @@ export default function ContentList({
             <ul className="grid border-b border-b-slate-100" onMouseLeave={onMouseLeave}>
                 {
                     items.map((item, index) => (
-                        <>
+                        <div key={index}>
                             {isFilled.keyText(item.data.title) && (
                                 <li key={index} className="list-item opacity-0f" ref={(el) => { itemsRef.current[index] = el; }}>
                                     <Link href={urlPrefix + "/" + item.uid} className="flex flex-col justify-between border-t border-t-slate-100 py-10 text-slate-200 md:flex-row " aria-label={item.data.title} onMouseEnter={() => onMouseEnter(index)}>
@@ -153,7 +153,7 @@ export default function ContentList({
                                     </Link>
                                 </li>
                             )}
-                        </>
+                        </div>
                     ))
                 }
             </ul>
