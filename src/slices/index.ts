@@ -14,6 +14,6 @@ export const components = {
   showcase: dynamic(() => import("./Showcase")),
   skills: dynamic(() => import("./Skills")),
   social: dynamic(() => import("./Social")),
-  tech_list: dynamic(() => import("./TechList")),
+  // tech_list: dynamic(() => import("./TechList")),
   text_block: dynamic(() => import("./TextBlock")),
 };
