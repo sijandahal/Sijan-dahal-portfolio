@@ -121,9 +121,13 @@ export default function NavBar({ settings }: NavBarProps) {
             const active = isActive(item.link); // Check if the link is active
             return (
               <li
-                key={item.label}
-                ref={(el) => navItemsRef.current[index] = el} // Correctly assign the ref
-              >
+              key={item.label}
+              ref={(el) => {
+                if (el) {
+                  navItemsRef.current[index] = el; 
+                }
+              }}
+            >
                 {item.cta_button ? (
                   <ButtonLink
                     field={item.link}
