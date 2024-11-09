@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Content, asLink } from "@prismicio/client";
+import { Content, LinkField, asLink } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import ButtonLink from "@/components/ButtonLink";
 import { Logo } from "@/components/Logo";
@@ -20,7 +20,7 @@ export default function NavBar({ settings }: NavBarProps) {
   const pathname = usePathname();
   
   // Create a ref for the desktop navigation items
-  const navItemsRef = useRef([]);
+  const navItemsRef = useRef<(HTMLLIElement | null)[]>([]);
 
   useEffect(() => {
     if (navItemsRef.current.length > 0) {
@@ -39,7 +39,15 @@ export default function NavBar({ settings }: NavBarProps) {
     }
   }, [settings]);
 
-  const isActive = (link: string) => pathname === asLink(link) || pathname.includes(asLink(link) as string);
+  const isLinkField = (link: any): link is LinkField => link?.url !== undefined;
+
+  const isActive = (link: string | LinkField) => {
+    if (isLinkField(link)) {
+      return pathname === asLink(link) || pathname.includes(asLink(link) as string);
+    }
+    // Handle string-based link comparison directly
+    return pathname === link || pathname.includes(link);
+  };
 
   return (
     <nav className="md:py-6 px-4 py-4 md:px-6" aria-label="Main">
@@ -114,7 +122,7 @@ export default function NavBar({ settings }: NavBarProps) {
             return (
               <li
                 key={item.label}
-                ref={(el) => (navItemsRef.current[index] = el)} // Add each item to the ref array
+                ref={(el) => navItemsRef.current[index] = el} // Correctly assign the ref
               >
                 {item.cta_button ? (
                   <ButtonLink
