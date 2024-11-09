@@ -24,9 +24,9 @@ const Expertise = ({ slice }: ExpertiseProps): JSX.Element => {
     <div className="">
       <div className="flex mt-16 rounded-xl backdrop-blur-sm flex-col w-full">
         <div className="flex md:flex-nowrap flex-wrap md:gap-0 gap-8">
-          {slice.primary.expertise_group.map((item) => (
+          {slice.primary.expertise_group.map((item, index) => (
             <>
-            <div className=" w-full md:w-4/12 flex gap-3 flex-col border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-8 py-8 md:px-8 md:py-8 rounded-md md:rounded-none">
+            <div key = {index} className=" w-full md:w-4/12 flex gap-3 flex-col border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-8 py-8 md:px-8 md:py-8 rounded-md md:rounded-none">
               <div className="wrapper flex flex-row-reverse justify-end gap-5 items-center ">
               <h3 className="text-xl font-bold">{item.expertise_title}</h3>
               <PrismicNextImage field={item.image} className="w-11 h-11" />
