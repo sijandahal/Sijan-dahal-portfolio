@@ -1,0 +1,81 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "audience",
+				"type": "Text"
+			},
+			"item": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "ice",
+									"type": "Text"
+								}
+							],
+							[
+								"tech_stacks",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "what",
+									"type": "Text"
+								}
+							],
+							[
+								"company_text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "substance",
+									"type": "Text"
+								}
+							],
+							[
+								"company_link",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com",
+										"text": "exciting"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"time_period": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cupidatat non in commodo. Officia id eiusmod laboris excepteur. Fugiat esse culpa consequat commodo laboris."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit et tempor eu sunt."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
