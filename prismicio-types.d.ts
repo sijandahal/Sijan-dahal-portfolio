@@ -103,6 +103,7 @@ export type BlogPostDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TechSkillsSlice
   | ContentIndexSlice
   | SocialSlice
   | ExpertiseSlice
@@ -1670,6 +1671,86 @@ export type TechListSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *TechSkills → Default → Primary → Item*
+ */
+export interface TechSkillsSliceDefaultPrimaryItemItem {
+  /**
+   * Tech Name field in *TechSkills → Default → Primary → Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_skills.default.primary.item[].tech_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tech_name: prismic.KeyTextField;
+
+  /**
+   * Tech Color field in *TechSkills → Default → Primary → Item*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_skills.default.primary.item[].tech_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  tech_color: prismic.ColorField;
+}
+
+/**
+ * Primary content in *TechSkills → Default → Primary*
+ */
+export interface TechSkillsSliceDefaultPrimary {
+  /**
+   * Heading field in *TechSkills → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_skills.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Item field in *TechSkills → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_skills.default.primary.item[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  item: prismic.GroupField<Simplify<TechSkillsSliceDefaultPrimaryItemItem>>;
+}
+
+/**
+ * Default variation for TechSkills Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TechSkillsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TechSkillsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TechSkills*
+ */
+type TechSkillsSliceVariation = TechSkillsSliceDefault;
+
+/**
+ * TechSkills Shared Slice
+ *
+ * - **API ID**: `tech_skills`
+ * - **Description**: TechSkills
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TechSkillsSlice = prismic.SharedSlice<
+  "tech_skills",
+  TechSkillsSliceVariation
+>;
+
+/**
  * Primary content in *TextBlock → Default → Primary*
  */
 export interface TextBlockSliceDefaultPrimary {
@@ -1808,6 +1889,11 @@ declare module "@prismicio/client" {
       TechListSliceDefaultPrimary,
       TechListSliceVariation,
       TechListSliceDefault,
+      TechSkillsSlice,
+      TechSkillsSliceDefaultPrimaryItemItem,
+      TechSkillsSliceDefaultPrimary,
+      TechSkillsSliceVariation,
+      TechSkillsSliceDefault,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,

@@ -23,7 +23,7 @@ export default function BiographySlice({ slice }: any) {
       { x: 0, opacity: 1, duration: 2 },
     );
 
-    // Right Wrapper (slides from right) – Starts after the left wrapper animation completes
+    
     tl.fromTo(
       rightWrapperRef.current,
       { x: 100, opacity: 0 }, // Start from right with opacity 0
@@ -66,7 +66,7 @@ export default function BiographySlice({ slice }: any) {
             <h1 className="font-bold leading-tight tracking-tight text-5xl mb-7 md:text-7xl">
               {slice.primary.heading}
             </h1>
-            <div className="text-xl">
+            <div className="lg:text-lg">
               <PrismicRichText field={slice.primary.description} />
             </div>
             <ButtonLink
