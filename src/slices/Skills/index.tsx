@@ -58,10 +58,11 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
         </h2>
       </AnimatedContent>
       {/* Programming Wrapper */}
-      <div className="flex gap-7 flex-wrap md:flex-nowrap">
+      <div className="main__wrapper flex flex-col gap-12 mt-16">
+      <div className="flex gap-12 flex-wrap md:flex-nowrap">
         <div
           ref={(el) => { if (el) skillsRef.current.push(el); }} // Correct ref callback
-          className="flex gap-5 mt-16 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
+          className="flex gap-5 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">Programming Language</h2>
           <div className="flex gap-7">
@@ -76,7 +77,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
 
         <div
           ref={(el) => { if (el) skillsRef.current.push(el); }} // Correct ref callback
-          className="flex gap-5 mt-16 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
+          className="flex gap-5 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">FrontEnd Technologies</h2>
           <div className="flex gap-7">
@@ -90,10 +91,10 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex gap-7 flex-wrap md:flex-nowrap">
+      <div className="flex gap-12 flex-wrap md:flex-nowrap">
         <div
           ref={(el) => { if (el) skillsRef.current.push(el); }} 
-          className="flex gap-5 mt-16 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
+          className="flex gap-5 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">BackEnd</h2>
           <div className="flex gap-7">
@@ -108,7 +109,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
 
         <div
           ref={(el) => { if (el) skillsRef.current.push(el); }} 
-          className="flex gap-5 mt-16 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
+          className="flex gap-5 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">Database</h2>
           <div className="flex gap-7">
@@ -121,6 +122,8 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
           </div>
         </div>
       </div>
+      </div>
+   
     </Bounded>
   );
 };

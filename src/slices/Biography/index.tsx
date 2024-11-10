@@ -63,7 +63,7 @@ export default function BiographySlice({ slice }: any) {
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex gap-5 md:gap-14 flex-wrap md:flex-nowrap flex-col-reverse md:flex-row">
           <div className="md:basis-8/12 left__wrapper" ref={leftWrapperRef}>
-            <h1 className="font-bold leading-tight tracking-tight text-5xl mb-7 md:text-7xl">
+            <h1 className="font-bold leading-tight tracking-tight text-5xl mb-5 md:mb-7 md:text-7xl">
               {slice.primary.heading}
             </h1>
             <div className=" hero__body mt-6 max-w-2xl text-balance text-slate-300 lg:text-lg">

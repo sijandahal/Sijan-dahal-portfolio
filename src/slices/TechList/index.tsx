@@ -66,7 +66,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
     >
       <div ref={component}>
 
-        <h2 className="text-balance text-5xl mb-16 font-medium md:text-7xl text-left"> {slice.primary.heading} </h2>
+        {/* <h2 className="text-balance text-5xl mb-16 font-medium md:text-7xl text-left"> {slice.primary.heading} </h2> */}
 
         {slice.primary.item.map(({ tech_color, tech_name }, index) => (
           <div
