@@ -33,8 +33,8 @@ export default function AnimatedContent({
 
       tl.fromTo(
         ".img__wrapper__hero",
-        { opacity: 0, x: -100 },    // Start off-screen to the left and fully transparent
-        { opacity: 1, x: 0, duration: 2 }, // Slide in to original position and fade in
+        { opacity: 0, x: -100 }, 
+        { opacity: 1, x: 0, duration: 2 }, 
         "-=0.7"  // Overlap with the previous animation by 0.7 seconds
       );
       
@@ -42,8 +42,8 @@ export default function AnimatedContent({
 
       tl.fromTo(
         ".hero__heading",
-        { opacity: 0, x: -100 },    // Start off-screen to the left and fully transparent
-        { opacity: 1, x: 0, duration: 2 }, // Slide in to original position and fade in
+        { opacity: 0, x: -100 }, 
+        { opacity: 1, x: 0, duration: 2 }, 
         "-=0.7"  // Overlap with the previous animation by 0.7 seconds
       );
 
@@ -81,25 +81,25 @@ export default function AnimatedContent({
       {/* <StarGrid /> */}
 
       {isFilled.image(slice.primary.header_image) && (
-         <div className="img__wrapper__hero h-28 w-28 md:h-36 md:w-36 rounded-full mb-9 opacity-0">
+         <div className="img__wrapper__hero h-28 w-28  lg:w-32 lg:h-32 2xl:h-36 2xl:w-36 rounded-full mb-7 2xl:mb-9 opacity-0">
          <PrismicNextImage field={slice.primary.header_image} className="rounded-full"/>
          </div>
       )}
      
       {isFilled.richText(slice.primary.heading) && (
-        <h1 className="hero__heading text-balance text-5xl font-medium opacity-0 md:text-7xl mb-7">
+        <h1 className="hero__heading text-balance text-5xl font-medium opacity-0 md:text-7xl mb-5 sm:mb-7">
           <PrismicText field={slice.primary.heading} />
         </h1>
       )}
 
       {isFilled.richText(slice.primary.body) && (
-        <div className="hero__body mt-6 max-w-lg text-balance text-slate-300 opacity-0">
+        <div className="hero__body mt-6 max-w-xl text-balance text-slate-300 opacity-0 lg:text-lg">
           <PrismicRichText field={slice.primary.body} />
         </div>
       )}
       {isFilled.link(slice.primary.button_link) && (
         <ButtonLink
-          className="hero__button mt-8 opacity-0"
+          className="hero__button mt-5 md:mt-8 opacity-0"
           field={slice.primary.button_link}
         >
           {slice.primary.button_label}

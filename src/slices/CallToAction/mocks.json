@@ -26,6 +26,17 @@
 					"url": "http://google.com",
 					"text": "touch"
 				}
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ut sint nisi elit tempor dolor dolor sint cupidatat laboris duis commodo adipisicing."
+						}
+					}
+				]
 			}
 		},
 		"items": []

@@ -42,7 +42,7 @@ const Bento = ({ slice }: BentoProps): JSX.Element => {
         <PrismicRichText field={slice.primary.body} />
       </div>
 
-      <div className="mt-16 grid max-w-4xl grid-rows-[auto_auto_auto] gap-8 md:grid-cols-3 md:gap-10">
+      <div className="mt-16 grid max-w-6xl grid-rows-[auto_auto_auto] gap-8 md:grid-cols-3 md:gap-10">
         {slice.primary.repeatable_zone.map((item, index) => (
             <div key={index}
             className={clsx(
@@ -50,19 +50,17 @@ const Bento = ({ slice }: BentoProps): JSX.Element => {
               item.wide ? "md:col-span-2" : "md:col-span-1",
             )}
           >
+              <PrismicNextLink field = {item.linktext}>
             <h3 className="text-2xl">
             <PrismicRichText field={item.title} />
             </h3>
+              </PrismicNextLink>
             <div className="max-w-md text-balance text-slate-300">
               <PrismicRichText field={item.body} />
             </div>
-            <PrismicNextImage field={item.image} className="max-h-36 w-auto" />
+            <PrismicNextImage field={item.image} className="lg:max-h-48  max-h-36 w-auto" />
           </div>
 
-  // Render the item
-  // <div>
-  //   <h1> {item.title} </h1>
-  //   <PrismicNextImage field={item.image} />    </div>
 
 ))}
       </div>
