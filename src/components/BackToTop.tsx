@@ -47,16 +47,12 @@ export default function BackToTopButton() {
 
   return (
     <>
-      {isVisible && (
-        <div
-          ref={buttonRef}  
-          className="fixed z-[999999] inline-flex opacity-0 pointer-events-auto inset-y-1/2 right-16 transform -translate-y-1/2"
-          onClick={scrollToTop}
-        >
-          <div
-            className="relative flex gap-3 justify-center items-center transition-all duration-300 cursor-pointer rounded-full top-0 bg-white text-black m-2.5 translate-x-[50%] translate-y-[50%] p-4 rotate-[270deg] transform origin-[185px_175px] hover:translate-y-[-3px]"
+     
+           {isVisible && (
+          <div ref={buttonRef}  
+            className=" flex gap-3 h-5 w-28 md:h-11 md:w-32 fixed bottom-14 top-unset -right-4 justify-center items-center transition-all duration-300 cursor-pointer rounded-full  bg-white text-black m-2.5 p-4 rotate-[270deg]  hover:translate-y-[-3px]"  onClick={scrollToTop}
           >
-            <div className="text-sm">TO TOP</div>
+            <div className=" text-xs md:text-sm">TO TOP</div>
             <div className="h-6 w-6 rotate-90">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +65,6 @@ export default function BackToTopButton() {
               </svg>
             </div>
           </div>
-        </div>
       )}
     </>
   );
