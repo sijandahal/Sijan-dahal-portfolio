@@ -61,12 +61,12 @@ export default function BiographySlice({ slice }: any) {
       data-slice-variation={slice.variation}
     >
       <div className="mx-auto w-full max-w-6xl">
-        <div className="flex gap-14 flex-wrap md:flex-nowrap flex-col-reverse md:flex-row">
+        <div className="flex gap-5 md:gap-14 flex-wrap md:flex-nowrap flex-col-reverse md:flex-row">
           <div className="md:basis-8/12 left__wrapper" ref={leftWrapperRef}>
             <h1 className="font-bold leading-tight tracking-tight text-5xl mb-7 md:text-7xl">
               {slice.primary.heading}
             </h1>
-            <div className="lg:text-lg">
+            <div className=" hero__body mt-6 max-w-2xl text-balance text-slate-300 lg:text-lg">
               <PrismicRichText field={slice.primary.description} />
             </div>
             <ButtonLink
@@ -75,7 +75,7 @@ export default function BiographySlice({ slice }: any) {
               onMouseEnter={handleHoverIn} // Trigger hover-in animation
               onMouseLeave={handleHoverOut} // Trigger hover-out animation
             >
-              {slice.primary.button_text || "Learn More"}
+              {slice.primary.button_text || "More About Me"}
             </ButtonLink>
           </div>
 
@@ -86,11 +86,11 @@ export default function BiographySlice({ slice }: any) {
           >
             <div
               ref={imageRef}
-              className="image__wrapper__right md:basis-4/12 w-8/12 md:w-full"
+              className="image__wrapper__right md:basis-4/12  md:w-full md:h-full h-28 w-28"
             >
               <PrismicNextImage
                 field={slice.primary.avatar}
-                className="highlight w-full bg-gradient-to-tr from-transparent"
+                className="highlight w-full bg-gradient-to-tr from-transparent rounded-full "
               // Attach imageRef to PrismicNextImage
               />
             </div>

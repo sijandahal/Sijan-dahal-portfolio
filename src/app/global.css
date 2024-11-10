@@ -173,3 +173,26 @@
     transform: rotate(360deg);
   }
 }
+
+p > a {
+  position: relative;
+ @apply text-yellow-500;
+}
+
+p > a::after {
+  @apply bg-yellow-500;
+  content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.5;
+    left: 0;
+    transition: 0.3s ease-in all;
+}
+
+p > a:hover::after, p > a:focus-visible::after {
+  width: 100%;
+}
+

@@ -103,7 +103,7 @@ export default function NavBar({ settings }: NavBarProps) {
               return (
                 <PrismicNextLink
                   key={item.label}
-                  className={clsx("block px-3 text-3xl first:mt-8", active && "text-yellow-500")} // Highlight active item
+                  className={clsx("block px-3 text-3xl first:mt-8 hover:text-yellow-500 transition-colors", active && "text-yellow-500")} // Highlight active item
                   field={item.link}
                   onClick={() => setOpen(false)}
                   aria-current={active ? "page" : undefined}
@@ -139,7 +139,7 @@ export default function NavBar({ settings }: NavBarProps) {
                 ) : (
                   <PrismicNextLink
                     field={item.link}
-                    className={clsx("inline-flex min-h-11 items-center", active && "text-yellow-500")} // Highlight active item
+                    className={clsx("inline-flex min-h-11 items-center hover:text-yellow-500 transition-colors", active && "text-yellow-500")} // Highlight active item
                     aria-current={active ? "page" : undefined}
                   >
                     {item.label}
