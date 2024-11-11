@@ -196,3 +196,60 @@ p > a:hover::after, p > a:focus-visible::after {
   width: 100%;
 }
 
+/* Loader */
+
+.loader__text {
+  position: relative;
+  font-size: 14vw;
+  @apply bg-slate-900;
+  -webkit-text-stroke: 0.3vw #0f172a;
+  text-transform: uppercase;
+}
+.loader__text::before {
+  content: attr(data-text);
+  position: absolute;
+  top:0;
+  left:0;
+  width: 0;
+  height: 100%;
+  color:#eab308;
+  -webkit-text-stroke: 0vw #0f172a;
+  border-right: 2px solid #eab308;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+
+
+  0% ,10%,100%{
+      width: 0;
+  }
+  70%,90%{
+      width: 100%;
+  }
+}
+
+
+
+.loader__subtext {
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #eab308, #fff, #eab308);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: sub__text__animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes sub__text__animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+

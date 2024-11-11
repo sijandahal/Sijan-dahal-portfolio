@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTop";
 import Script from "next/script";
+import LoaderComponent from "@/components/Loader/LoaderComponent";
 
 
 const dmSans = DM_Sans({
@@ -37,10 +38,12 @@ export default function RootLayout({
         </Script>
       </head>
       <body className=" bg-slate-900 text-white overflow-x-hidden">
+        <LoaderComponent>
         <Header />
         {children}
         <BackToTopButton />
         <Footer />
+        </LoaderComponent>
       </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
