@@ -24,9 +24,11 @@ const ContentIndex = async ({ slice }: ContentIndexProps): Promise<JSX.Element> 
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
+     <h1 className="font-bold leading-tight tracking-tight text-5xl mb-5 md:mb-7 md:text-7xl">
       {slice.primary.heading}
+     </h1>
       {isFilled.richText(slice.primary.description) && (
-        <div className="prose prose-xl prose-invert mb-10">
+        <div className=" hero__body  max-w-2xl text-balance text-slate-300 lg:text-lg">
           <PrismicRichText field={slice.primary.description} />
         </div>
       )}

@@ -134,7 +134,7 @@ export default function ContentList({
 
     return (
         <div ref={component}>
-            <ul className="grid border-b border-b-slate-100" onMouseLeave={onMouseLeave}>
+            <ul className="grid border-b border-b-slate-100 mt-11" onMouseLeave={onMouseLeave}>
                 {
                     items.map((item, index) => (
                         <div key={index}>

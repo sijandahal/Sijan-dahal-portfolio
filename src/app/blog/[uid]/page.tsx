@@ -17,7 +17,7 @@ export default async function Page({ params }: { params: Params }) {
     
   return (<article className=" max-w-6xl m-auto px-4 py-14 first:pt-10 md:px-6 md:py-20 lg:py-24">
     <div className="wrapper mb-9">
-  <h1 className="text-7xl font-medium mb-5">{page.data.title}</h1>
+  <h1 className="font-medium leading-tight tracking-tight text-5xl mb-5 md:mb-7 md:text-7xl ">{page.data.title}</h1>
         <div className="flex gap-4"> {page.tags.map((tag, index)=> (
             <span key={index} className="text-xl font-bold bg-gradient-to-b from-yellow-100 to-yellow-500 bg-clip-text not-italic text-transparent">{tag}</span>
         ))} </div>
