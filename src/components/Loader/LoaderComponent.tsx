@@ -12,7 +12,7 @@ export default function LoaderComponent({ children }: LoaderComponentProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 500000); // Adjust timeout as needed
+    setTimeout(() => setIsLoading(false), 3000); // Adjust timeout as needed
   }, []);
 
   if (isLoading) return <Loader />;
