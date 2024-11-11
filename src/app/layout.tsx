@@ -21,13 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={dmSans.variable}>
       <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QTVB72VF2E"></Script>
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-2EEFGD3PN4"/>
         <Script id="google-analytics">
           { `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-QTVB72VF2E');
+          gtag('config', 'G-2EEFGD3PN4');
           `}
+
         </Script>
       </head>
       <body className=" bg-slate-900 text-white overflow-x-hidden">
