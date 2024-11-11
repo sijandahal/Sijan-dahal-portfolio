@@ -28,7 +28,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
       <div className="text-balance text-left text-5xl font-medium md:text-7xl block w-full">
         <PrismicText field={slice.primary.heading} />
       </div>
-      <div className="hero__body mt-6 max-w-7xl text-balance text-slate-300  lg:text-lg">
+      <div className="hero__body mt-6 md:mt-16 max-w-7xl text-balance text-slate-300  lg:text-lg">
 
     <PrismicRichText field={slice.primary.description} />
       </div>
