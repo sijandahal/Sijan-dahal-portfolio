@@ -72,6 +72,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
                 <h3 className="text-center mt-2">{item.heading}</h3>
               </div>
             ))}
+            
           </div>
         </div>
 
