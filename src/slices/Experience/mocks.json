@@ -48,30 +48,30 @@
 										"text": "exciting"
 									}
 								}
+							],
+							[
+								"time_period",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "salmon",
+									"type": "Text"
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Quis elit amet eu ad aliquip qui cupidatat minim non magna dolore laboris."
+											}
+										}
+									]
+								}
 							]
 						]
-					}
-				]
-			},
-			"time_period": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Cupidatat non in commodo. Officia id eiusmod laboris excepteur. Fugiat esse culpa consequat commodo laboris."
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Reprehenderit et tempor eu sunt."
-						}
 					}
 				]
 			}

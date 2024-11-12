@@ -806,6 +806,26 @@ export interface ExperienceSliceDefaultPrimaryItemItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   company_link: prismic.LinkField;
+
+  /**
+   * Time Period field in *Experience → Default → Primary → Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.default.primary.item[].time_period
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  time_period: prismic.KeyTextField;
+
+  /**
+   * Description field in *Experience → Default → Primary → Item*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.default.primary.item[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 }
 
 /**
@@ -821,26 +841,6 @@ export interface ExperienceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   heading: prismic.KeyTextField;
-
-  /**
-   * Time Period field in *Experience → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: experience.default.primary.time_period
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  time_period: prismic.RichTextField;
-
-  /**
-   * Description field in *Experience → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: experience.default.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
 
   /**
    * Item field in *Experience → Default → Primary*

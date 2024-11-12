@@ -27,7 +27,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
             <div className=" flex-wrap md:flex-nowrap flex items-center gap-3 md:gap-6">
               <h2 className="text-2xl">
                 {item.title}
-              </h2> <span className="text-slate-400 flex items-center flex-wrap md:flex-nowrap gap-2 md:gap-3 text-sm ">
+              </h2> <span className="text-slate-400 flex items-center flex-wrap xl:flex-nowrap gap-2 md:gap-3 text-sm  ">
                 {item.tech_stacks && item.tech_stacks
                   .split(',')
                   .map((tech, index) => (
@@ -44,10 +44,11 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
               <PrismicNextLink field={item.company_link} className="relative" />          </div>
 
             <div>
-              <PrismicRichText field={slice.primary.time_period} />
+              <p>{item.time_period}</p>
+
             </div>
             <div className="list-disc mt-4 company__desc">
-              <PrismicRichText field={slice.primary.description} />
+            <PrismicRichText field={item.description} />
             </div>
           </div>
         ))}

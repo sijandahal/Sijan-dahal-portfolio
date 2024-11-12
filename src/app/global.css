@@ -174,12 +174,12 @@
   }
 }
 
-p > a {
+p > a, div li > a{
   position: relative;
  @apply text-yellow-500;
 }
 
-p > a::after {
+p > a::after, div li > a::after {
   @apply bg-yellow-500;
   content: "";
     display: block;
@@ -192,10 +192,13 @@ p > a::after {
     transition: 0.3s ease-in all;
 }
 
-p > a:hover::after, p > a:focus-visible::after {
+p > a:hover::after, p > a:focus-visible::after, div li > a:hover::after, div li > a:focus-visible::after {
   width: 100%;
 }
 
+nav ul li a {
+  color: #fff;
+}
 /* Loader */
 
 .loader__text {
@@ -253,3 +256,8 @@ p > a:hover::after, p > a:focus-visible::after {
   }
 }
 
+footer svg {
+  fill: #fff;
+}
+
+/* p ul  */

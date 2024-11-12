@@ -24,10 +24,10 @@ export default function NavBar({ settings }: NavBarProps) {
 
   useEffect(() => {
     if (navItemsRef.current.length > 0) {
-      // Use GSAP's timeline to stagger animations for each nav item
+      
       gsap.fromTo(
         navItemsRef.current,
-        { opacity: 0, y: -20 }, // start from opacity 0 and 20px below
+        { opacity: 0, y: -20 }, 
         {
           opacity: 1,
           y: 0,
