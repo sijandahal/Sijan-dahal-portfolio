@@ -36,6 +36,7 @@ export default function RootLayout({
             gtag('config', 'G-2EEFGD3PN4');
           `}
         </Script>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className=" bg-slate-900 text-white overflow-x-hidden">
         <LoaderComponent>

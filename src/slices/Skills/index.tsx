@@ -65,9 +65,9 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
           className="flex gap-5 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">Programming Language</h2>
-          <div className="flex gap-7">
+          <div className="flex gap-7 flex-wrap lg:flex-nowrap">
             {slice.primary.languages.map((item, index) => (
-              <div key={index} className="max-w-xs">
+              <div key={index} className="sm:max-w-xs max-w-18">
                 <PrismicNextImage field={item.image} className="w-24 h-24" />
                 <h3 className="text-center mt-2">{item.heading}</h3>
               </div>
@@ -80,7 +80,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
           className="flex gap-5 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">FrontEnd Technologies</h2>
-          <div className="flex gap-7">
+          <div className="flex gap-7 flex-wrap lg:flex-nowrap">
             {slice.primary.front_end.map((item, index) => (
               <div key={index} className="max-w-xs">
                 <PrismicNextImage field={item.image} className="w-24 h-24" />
@@ -97,7 +97,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
           className="flex gap-5 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">BackEnd</h2>
-          <div className="flex gap-7">
+          <div className="flex gap-7 flex-wrap lg:flex-nowrap">
             {slice.primary.back_end.map((item, index) => (
               <div key={index} className="max-w-xs">
                 <PrismicNextImage field={item.image} className="w-24 h-24" />
@@ -112,7 +112,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
           className="flex gap-5 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 md:px-8 md:py-8 px-4 py-4 backdrop-blur-sm flex-col w-full"
         >
           <h2 className="text-2xl">Database</h2>
-          <div className="flex gap-7">
+          <div className="flex gap-7 flex-wrap lg:flex-nowrap">
             {slice.primary.database.map((item, index) => (
               <div key={index} className="max-w-xs">
                 <PrismicNextImage field={item.image} className="w-24 h-24" />
